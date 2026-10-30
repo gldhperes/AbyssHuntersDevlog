@@ -2,10 +2,14 @@
  * Site-level configuration: brand, navigation and hero copy/images.
  * Replace `heroImage` with the official key art when it is ready.
  */
+
+import ConceptArt from "../assets/AbyssHuntersConceptArt.png";
+
+
 export const siteData = {
   brandName: "Abyss Hunters",
   brandShort: "Abyss",
-  heroImage: "https://media.base44.com/images/public/6ae367fe1ff7beeda8902bad/ea88d5c56_generated_1e1291f7.png",
+  heroImage: ConceptArt,
   hero: {
     eyebrow: "Diário de desenvolvimento",
     title: "Devlog",
