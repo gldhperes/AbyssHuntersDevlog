@@ -1,8 +1,9 @@
 import styles from "./About.module.css";
 
 const highlights = [
-  { label: "Gênero", value: "Ação e exploração" },
-  { label: "Ambientação", value: "Fantasia sombria" },
+  { label: "Gênero", value: "RPG, Ação e exploração" },
+  { label: "Ambientação", value: "Fantasia Medieval, Aventura e Exploração." },
+  { label: "Tecnologias", value: "Unity, Photon Fusion 2, Playfab" },
   { label: "Status", value: "Em desenvolvimento" },
 ];
 
@@ -16,7 +17,7 @@ export default function About() {
             Um mundo construído sobre o abismo
           </h2>
           <p className={styles.paragraph}>
-            Abyss Hunters é um jogo de ação e exploração em um universo de fantasia sombria. Este
+            Abyss Hunters é um jogo online multiplayer Action RPG inspirado em Dauntless e Monster Hunter. Este
             devlog registra, atualização após atualização, o que está sendo construído: os sistemas,
             as mecânicas e as decisões que dão forma à descida.
           </p>
