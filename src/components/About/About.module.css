@@ -63,6 +63,7 @@
 
 .highlightValue {
   margin: 0;
+  text-align: end;
   font-family: var(--font-family-heading);
   font-size: 1.1rem;
   color: var(--color-text-primary);
