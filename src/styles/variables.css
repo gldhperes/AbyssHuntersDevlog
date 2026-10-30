@@ -1,0 +1,129 @@
+/* ==========================================================================
+   Abyss Hunters — Global design tokens
+   Every color used by the interface must live here. Change a token and the
+   whole site follows.
+   ========================================================================== */
+
+:root {
+  /* ------------------------------ Backgrounds ----------------------------- */
+  --color-void: #02060a;
+  --color-background: #06111d;
+  --color-surface: #0b1b2a;
+  --color-surface-elevated: #10263a;
+  --color-surface-glass: rgba(11, 27, 42, 0.74);
+  --color-surface-glass-strong: rgba(14, 33, 51, 0.9);
+
+  /* --------------------------------- Text -------------------------------- */
+  --color-text-primary: #f2f5f8;
+  --color-text-secondary: #b8c7d5;
+  --color-text-muted: #8ea2b4;
+  --color-white-rgb: 242, 245, 248;
+
+  /* ------------------------------- Accents ------------------------------- */
+  --color-accent-primary: #28d9ff;
+  --color-accent-primary-rgb: 40, 217, 255;
+  --color-accent-secondary: #a66cff;
+  --color-accent-secondary-rgb: 166, 108, 255;
+  --color-accent-tertiary: #ffbd59;
+  --color-accent-tertiary-rgb: 255, 189, 89;
+
+  /* ------------------------------ Categories ----------------------------- */
+  --color-category-combat: var(--color-accent-primary);
+  --color-category-combat-rgb: var(--color-accent-primary-rgb);
+  --color-category-systems: var(--color-accent-secondary);
+  --color-category-systems-rgb: var(--color-accent-secondary-rgb);
+  --color-category-world: var(--color-accent-tertiary);
+  --color-category-world-rgb: var(--color-accent-tertiary-rgb);
+  --color-category-progress: #7ddfc4;
+  --color-category-progress-rgb: 125, 223, 196;
+
+  /* --------------------------- Borders & effects ------------------------- */
+  --color-border: rgba(90, 200, 255, 0.24);
+  --color-border-subtle: rgba(var(--color-white-rgb), 0.09);
+  --color-border-strong: rgba(var(--color-accent-primary-rgb), 0.45);
+  --color-timeline-line: rgba(var(--color-accent-primary-rgb), 0.45);
+  --color-focus: var(--color-accent-primary);
+  --color-overlay: rgba(3, 10, 19, 0.72);
+  --color-overlay-strong: rgba(2, 6, 10, 0.94);
+  --color-glow-primary: rgba(var(--color-accent-primary-rgb), 0.45);
+
+  /* ------------------------------- Gradients ----------------------------- */
+  --gradient-page: linear-gradient(180deg, var(--color-background) 0%, var(--color-void) 100%);
+  --gradient-hero-overlay:
+    linear-gradient(
+      100deg,
+      rgba(2, 6, 10, 0.94) 0%,
+      rgba(2, 6, 10, 0.78) 34%,
+      rgba(2, 6, 10, 0.24) 68%,
+      rgba(2, 6, 10, 0.6) 100%
+    ),
+    linear-gradient(to top, var(--color-void) 0%, rgba(2, 6, 10, 0.45) 22%, rgba(2, 6, 10, 0) 62%);
+  --gradient-content-fade: linear-gradient(
+    to bottom,
+    rgba(2, 6, 10, 0.55) 0%,
+    rgba(2, 6, 10, 0.86) 9%,
+    rgba(2, 6, 10, 0.93) 55%,
+    rgba(2, 6, 10, 0.96) 100%
+  );
+  --gradient-card: linear-gradient(158deg, var(--color-surface-glass-strong) 0%, var(--color-surface-glass) 72%);
+  --gradient-timeline: linear-gradient(
+    to bottom,
+    rgba(var(--color-accent-primary-rgb), 0) 0%,
+    var(--color-accent-primary) 6%,
+    var(--color-accent-secondary) 52%,
+    var(--color-accent-primary) 92%,
+    rgba(var(--color-accent-primary-rgb), 0) 100%
+  );
+
+  /* ------------------------------- Typography ---------------------------- */
+  --font-family-heading: "Cormorant Garamond", "Playfair Display", Georgia, "Times New Roman", serif;
+  --font-family-body: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
+
+  --font-size-hero: clamp(3.6rem, 15vw, 11rem);
+  --font-size-hero-sub: clamp(0.8rem, 1.4vw, 1.05rem);
+  --font-size-section-title: clamp(2.1rem, 4.4vw, 3.4rem);
+  --font-size-card-title: clamp(1.45rem, 2.1vw, 1.95rem);
+  --font-size-body: 1rem;
+  --font-size-lead: clamp(1rem, 1.15vw, 1.125rem);
+  --font-size-small: 0.85rem;
+  --font-size-xs: 0.72rem;
+
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+
+  --line-height-body: 1.72;
+  --line-height-tight: 1.08;
+  --letter-spacing-eyebrow: 0.34em;
+  --letter-spacing-nav: 0.16em;
+  --letter-spacing-title: 0.02em;
+
+  /* --------------------------------- Layout ------------------------------ */
+  --content-max-width: 1240px;
+  --page-gutter: clamp(1.25rem, 4vw, 3.5rem);
+  --section-spacing: clamp(4.5rem, 10vh, 8.5rem);
+  --hero-image-position: center 45%;
+  --hero-content-max-width: 44rem;
+
+  /* -------------------------------- Timeline ----------------------------- */
+  --timeline-dot-size: 14px;
+  --timeline-line-width: 2px;
+  --timeline-row-gap: clamp(2.75rem, 6vw, 5.5rem);
+  --timeline-gutter: clamp(2.75rem, 5vw, 4.5rem);
+  --timeline-mobile-offset: 8px;
+  --timeline-mobile-gutter: clamp(2.75rem, 12vw, 3.75rem);
+
+  /* ------------------------------- Components ---------------------------- */
+  --card-radius: 16px;
+  --card-radius-small: 10px;
+  --card-border-width: 1px;
+  --card-padding: clamp(1.5rem, 2.4vw, 2.5rem);
+  --card-shadow: 0 18px 48px rgba(0, 0, 0, 0.42);
+  --card-shadow-hover: 0 28px 64px rgba(0, 0, 0, 0.54), 0 0 26px rgba(var(--color-accent-primary-rgb), 0.1);
+  --card-blur: 10px;
+  --media-radius: 10px;
+
+  /* --------------------------------- Motion ------------------------------ */
+  --transition-fast: 150ms ease;
+  --transition-base: 260ms cubic-bezier(0.22, 1, 0.36, 1);
+}

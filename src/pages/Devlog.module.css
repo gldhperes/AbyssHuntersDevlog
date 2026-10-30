@@ -1,0 +1,10 @@
+.page {
+  position: relative;
+  min-height: 100vh;
+  background-color: transparent;
+}
+
+.main {
+  position: relative;
+  z-index: 1;
+}

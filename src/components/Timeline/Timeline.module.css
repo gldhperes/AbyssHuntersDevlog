@@ -1,0 +1,215 @@
+.section {
+  position: relative;
+  padding-bottom: var(--section-spacing);
+  background-image: var(--gradient-content-fade);
+  text-align: start;
+}
+
+.inner {
+  width: 100%;
+  max-width: var(--content-max-width);
+  margin-inline: auto;
+  padding-inline: var(--page-gutter);
+}
+
+.heading {
+  max-width: 38rem;
+  padding-block: clamp(1rem, 4vh, 3rem) clamp(2.5rem, 6vh, 4.5rem);
+}
+
+.kicker {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: var(--letter-spacing-eyebrow);
+  text-transform: uppercase;
+  color: var(--color-accent-primary);
+}
+
+.title {
+  margin-top: 0.85rem;
+  font-size: var(--font-size-section-title);
+  color: var(--color-text-primary);
+}
+
+.lead {
+  margin-top: 1rem;
+  color: var(--color-text-secondary);
+  text-wrap: pretty;
+}
+
+/* ------------------------------- The spine -------------------------------- */
+
+.list {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--timeline-row-gap);
+  padding-bottom: clamp(1rem, 4vh, 3rem);
+}
+
+.list::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: var(--timeline-line-width);
+  transform: translateX(-50%);
+  background-image: var(--gradient-timeline);
+  box-shadow: 0 0 18px rgba(var(--color-accent-primary-rgb), 0.22);
+  pointer-events: none;
+}
+
+.item {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  column-gap: var(--timeline-gutter);
+  align-items: start;
+}
+
+.itemLeft .cardSlot {
+  grid-column: 1;
+}
+
+.itemRight .cardSlot {
+  grid-column: 2;
+}
+
+/* -------------------------------- Markers --------------------------------- */
+
+.marker {
+  --marker-color: var(--color-accent-primary);
+  --marker-color-rgb: var(--color-accent-primary-rgb);
+  position: absolute;
+  top: calc(var(--timeline-dot-size) / -2);
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  display: grid;
+  place-items: center;
+}
+
+.markerDot {
+  display: block;
+  width: var(--timeline-dot-size);
+  height: var(--timeline-dot-size);
+  border-radius: 50%;
+  background-color: var(--marker-color);
+  box-shadow:
+    0 0 0 4px rgba(var(--marker-color-rgb), 0.14),
+    0 0 16px var(--marker-color);
+}
+
+.markerDate {
+  position: absolute;
+  bottom: calc(100% + 0.7rem);
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0.25rem 0.7rem;
+  border: var(--card-border-width) solid rgba(var(--marker-color-rgb), 0.3);
+  border-radius: 999px;
+  background-color: var(--color-overlay-strong);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: var(--marker-color);
+}
+
+.toneCombat {
+  --marker-color: var(--color-category-combat);
+  --marker-color-rgb: var(--color-category-combat-rgb);
+}
+
+.toneSystems {
+  --marker-color: var(--color-category-systems);
+  --marker-color-rgb: var(--color-category-systems-rgb);
+}
+
+.toneWorld {
+  --marker-color: var(--color-category-world);
+  --marker-color-rgb: var(--color-category-world-rgb);
+}
+
+.toneProgress {
+  --marker-color: var(--color-category-progress);
+  --marker-color-rgb: var(--color-category-progress-rgb);
+}
+
+/* ------------------------ Connector to the card --------------------------- */
+
+.cardSlot {
+  position: relative;
+  min-width: 0;
+}
+
+.cardSlot::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: calc(var(--timeline-gutter) / 2);
+  height: 1px;
+  background-color: var(--color-timeline-line);
+  pointer-events: none;
+}
+
+.itemLeft .cardSlot::before {
+  right: calc(var(--timeline-gutter) / -2);
+  background-image: linear-gradient(to right, rgba(var(--color-accent-primary-rgb), 0.05), var(--color-timeline-line));
+}
+
+.itemRight .cardSlot::before {
+  left: calc(var(--timeline-gutter) / -2);
+  background-image: linear-gradient(to left, rgba(var(--color-accent-primary-rgb), 0.05), var(--color-timeline-line));
+}
+
+/* --------------------------------- Tablet --------------------------------- */
+
+@media (max-width: 1100px) {
+  .item {
+    column-gap: clamp(2rem, 4vw, 3rem);
+  }
+}
+
+/* --------------------------------- Mobile --------------------------------- */
+
+@media (max-width: 860px) {
+  .list::before {
+    left: var(--timeline-mobile-offset);
+    transform: none;
+  }
+
+  .item {
+    display: block;
+    padding-left: var(--timeline-mobile-gutter);
+  }
+
+  .itemLeft .cardSlot,
+  .itemRight .cardSlot {
+    grid-column: auto;
+  }
+
+  .marker {
+    top: 1.6rem;
+    left: var(--timeline-mobile-offset);
+    transform: translateX(-50%);
+  }
+
+  .markerDate {
+    display: none;
+  }
+
+  .item .cardSlot::before {
+    top: 1.6rem;
+    right: auto;
+    left: calc(var(--timeline-mobile-offset) - var(--timeline-mobile-gutter));
+    width: calc(var(--timeline-mobile-gutter) - var(--timeline-mobile-offset));
+    background-image: linear-gradient(
+      to left,
+      rgba(var(--color-accent-primary-rgb), 0.05),
+      var(--color-timeline-line)
+    );
+  }
+}

@@ -1,0 +1,83 @@
+.frame {
+  position: relative;
+  margin: 1.35rem 0 0;
+  overflow: hidden;
+  border: var(--card-border-width) solid var(--color-border-subtle);
+  border-radius: var(--media-radius);
+  background-color: var(--color-void);
+}
+
+.mediaLink {
+  display: block;
+  position: relative;
+  color: inherit;
+}
+
+.visual {
+  position: relative;
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  transition: transform 500ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.frame:hover .image {
+  transform: scale(1.02);
+}
+
+.videoOverlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  background-color: rgba(2, 6, 10, 0.38);
+}
+
+.playGlyph {
+  display: grid;
+  place-items: center;
+  width: 3.25rem;
+  height: 3.25rem;
+  border: 1px solid rgba(var(--color-accent-primary-rgb), 0.55);
+  border-radius: 50%;
+  background-color: rgba(2, 6, 10, 0.55);
+  color: var(--color-accent-primary);
+  box-shadow: 0 0 22px rgba(var(--color-accent-primary-rgb), 0.22);
+}
+
+.playGlyph svg {
+  width: 1.4rem;
+  height: 1.4rem;
+  margin-left: 2px;
+}
+
+.videoBadge {
+  padding: 0.25rem 0.75rem;
+  border: var(--card-border-width) solid var(--color-border);
+  border-radius: 999px;
+  background-color: rgba(2, 6, 10, 0.7);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-medium);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-text-secondary);
+}
+
+.mediaLink:hover .playGlyph {
+  border-color: var(--color-accent-primary);
+  background-color: rgba(var(--color-accent-primary-rgb), 0.16);
+}
+
+.mediaLink:hover .videoBadge {
+  color: var(--color-text-primary);
+}
