@@ -1,4 +1,4 @@
-import type { DevlogCategory, DevlogEntry } from "@/types/DevlogEntry";
+import type { DevlogCategory, DevlogEntry } from "../types/DevlogEntry";
 
 export const devlogCategoryLabels: Record<DevlogCategory, string> = {
   combat: "Combate",
