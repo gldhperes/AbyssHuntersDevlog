@@ -1,5 +1,10 @@
-// import BrandMark from "@/components/BrandMark/BrandMark";
+// Components
+import BrandMark from "../components/BrandMark/BrandMark.tsx";
+
+// Data
 import siteData from "../../data/siteData";
+
+// Styles
 import styles from "./Header.module.css";
 
 export default function Header() {
@@ -7,7 +12,7 @@ export default function Header() {
         <header className={styles.header}>
             <div className={styles.inner}>
                 <a className={styles.brand} href="#top">
-                    {/* <BrandMark className={styles.mark} /> */}
+                    <BrandMark className={styles.mark} />
                     <span className={styles.brandText}>
                         Abyss <span className={styles.brandAccent}>Hunters</span>
                     </span>

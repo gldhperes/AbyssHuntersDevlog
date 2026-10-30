@@ -1,3 +1,6 @@
+// Components
+import BrandMark from "../components/BrandMark/BrandMark";
+
 // Data
 import siteData from "../../data/siteData";
 
@@ -10,7 +13,7 @@ export default function Footer() {
       <div className={styles.inner}>
         <div className={styles.brandBlock}>
           <a className={styles.brand} href="#top">
-            {/* <BrandMark className={styles.mark} /> */}
+            <BrandMark className={styles.mark} />
             <span className={styles.brandName}>{siteData.brandName}</span>
           </a>
           <p className={styles.tagline}>Abyss Hunters — Em desenvolvimento</p>
