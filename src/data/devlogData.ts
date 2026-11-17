@@ -1,10 +1,10 @@
 // WEBP
-import _2026_03_23 from '../assets/webp/2026-03-23.webp'
-import _2026_03_30 from '../assets/webp/2026-03-30.webp'
-import _2026_04_07 from '../assets/webp/2026-04-07.webp'
-import _2026_04_19 from '../assets/webp/2026-04-19.webp'
-import _2026_05_04 from '../assets/webp/2026-05-04.webp'
-import _2026_06_01 from '../assets/webp/2026-06-01.webp'
+import _2026_03_23 from '../assets/videos/2026-03-23.webm'
+import _2026_03_30 from '../assets/videos/2026-03-30.webm'
+import _2026_04_07 from '../assets/videos/2026-04-07.webm'
+import _2026_04_19 from '../assets/videos/2026-04-19.webm'
+import _2026_05_04 from '../assets/videos/2026-05-04.webm'
+import _2026_06_01 from '../assets/videos/2026-06-01.webm'
 
 
 
@@ -162,7 +162,7 @@ export const devlogEntries: DevlogEntry[] = [
       "Player Systems Expansion: Improved architecture and initialization for future player-related systems."
     ],
     media: {
-      type: "image",
+      type: "video",
       src: _2026_06_01,
       alt: ""
     },

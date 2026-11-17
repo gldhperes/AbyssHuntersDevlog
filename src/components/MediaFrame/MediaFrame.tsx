@@ -1,4 +1,7 @@
-// import { Image } from "../components/ui/image";
+
+import { useEffect, useRef } from "react";
+
+// Types
 import type { DevlogMedia } from "../../types/DevlogEntry.ts";
 
 // Styles
@@ -8,46 +11,102 @@ type MediaFrameProps = {
   media: DevlogMedia;
 };
 
-function PlayGlyph() {
-  return (
-    <span className={styles.playGlyph} aria-hidden="true">
-      <svg viewBox="0 0 24 24" focusable="false">
-        <path d="M9 6.5 18 12l-9 5.5V6.5Z" fill="currentColor" />
-      </svg>
-    </span>
-  );
-}
-
 export default function MediaFrame({ media }: MediaFrameProps) {
-  const isVideo = media.type === "video";
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const video = videoRef.current;
+
+    if (!video || media.type !== "video") return;
+
+    let isInViewport = false;
+
+    // Controls playback based on visibility and tab state.
+    const updatePlayback = () => {
+      const isPageVisible = document.visibilityState === "visible";
+
+      if (isInViewport && isPageVisible) {
+        video.play().catch((error) => {
+          if (error.name !== "AbortError") {
+            console.warn("Video playback failed:", error);
+          }
+        });
+      } else {
+        video.pause();
+      }
+    };
+
+    // Detects when the video enters or leaves the viewport.
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        isInViewport =
+          entry.isIntersecting && entry.intersectionRatio >= 0.25;
+
+        updatePlayback();
+      },
+      {
+        threshold: [0, 0.25],
+      }
+    );
+
+    // Detects when the user changes browser tabs.
+    const handleVisibilityChange = () => {
+      updatePlayback();
+    };
+
+    observer.observe(video);
+
+    document.addEventListener(
+      "visibilitychange",
+      handleVisibilityChange
+    );
+
+    // Cleanup.
+    return () => {
+      observer.disconnect();
+
+      document.removeEventListener(
+        "visibilitychange",
+        handleVisibilityChange
+      );
+
+      video.pause();
+    };
+  }, [media.type, media.src]);
 
   const visual = (
     <span className={styles.visual}>
-
-      <img
-        src={media.src}
-        alt={media.alt}
-        className={styles.image}
-      />
-
-      {isVideo ? (
-        <span className={styles.videoOverlay}>
-          {media.href ? <PlayGlyph /> : null}
-          <span className={styles.videoBadge}>{media.href ? "Reproduzir" : "Vídeo em produção"}</span>
-        </span>
-      ) : null}
+      {media.type === "video" ? (
+        <video
+          ref={videoRef}
+          src={media.src}
+          className={styles.image}
+          muted
+          loop
+          playsInline
+          preload="none"
+          aria-label={media.alt || "Gameplay footage"}
+        />
+      ) : (
+        <img
+          src={media.src}
+          alt={media.alt}
+          className={styles.image}
+          loading="lazy"
+        />
+      )}
     </span>
   );
 
   return (
     <figure className={styles.frame}>
-      {isVideo && media.href ? (
+      {media.href ? (
         <a
           className={styles.mediaLink}
           href={media.href}
           target="_blank"
           rel="noreferrer noopener"
-          aria-label={`${media.alt} — abrir vídeo`}
+          aria-label={`${media.alt} — abrir mídia`}
         >
           {visual}
         </a>
