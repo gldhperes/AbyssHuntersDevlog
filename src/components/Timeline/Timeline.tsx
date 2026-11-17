@@ -15,6 +15,7 @@ const markerTone: Record<DevlogCategory, string> = {
   systems: styles.toneSystems,
   world: styles.toneWorld,
   progress: styles.toneProgress,
+  gameplay: styles.toneGameplay,
 };
 
 type TimelineProps = {

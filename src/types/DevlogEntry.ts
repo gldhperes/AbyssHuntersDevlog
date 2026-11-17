@@ -1,10 +1,9 @@
-export type DevlogCategory = "combat" | "systems" | "world" | "progress";
+export type DevlogCategory = "combat" | "systems" | "world" | "progress" | "gameplay";
 
 export type DevlogMedia = {
   type: "image" | "video";
   src: string;
   alt: string;
-  /** Optional destination for the media (e.g. an external video page). */
   href?: string;
 };
 

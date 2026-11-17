@@ -18,6 +18,7 @@ const categoryTone: Record<DevlogCategory, string> = {
   systems: styles.toneSystems,
   world: styles.toneWorld,
   progress: styles.toneProgress,
+  gameplay: styles.gameplay,
 };
 
 type TimelineEntryCardProps = {

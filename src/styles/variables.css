@@ -18,24 +18,38 @@
   --color-text-secondary: #b8c7d5;
   --color-text-muted: #8ea2b4;
   --color-white-rgb: 242, 245, 248;
+  
+ /* ------------------------------- Accents ------------------------------- */
+--color-accent-primary: #28d9ff;
+--color-accent-primary-rgb: 40, 217, 255;
 
-  /* ------------------------------- Accents ------------------------------- */
-  --color-accent-primary: #28d9ff;
-  --color-accent-primary-rgb: 40, 217, 255;
-  --color-accent-secondary: #a66cff;
-  --color-accent-secondary-rgb: 166, 108, 255;
-  --color-accent-tertiary: #ffbd59;
-  --color-accent-tertiary-rgb: 255, 189, 89;
+--color-accent-secondary: #a66cff;
+--color-accent-secondary-rgb: 166, 108, 255;
 
-  /* ------------------------------ Categories ----------------------------- */
-  --color-category-combat: var(--color-accent-primary);
-  --color-category-combat-rgb: var(--color-accent-primary-rgb);
-  --color-category-systems: var(--color-accent-secondary);
-  --color-category-systems-rgb: var(--color-accent-secondary-rgb);
-  --color-category-world: var(--color-accent-tertiary);
-  --color-category-world-rgb: var(--color-accent-tertiary-rgb);
-  --color-category-progress: #7ddfc4;
-  --color-category-progress-rgb: 125, 223, 196;
+--color-accent-tertiary: #ffbd59;
+--color-accent-tertiary-rgb: 255, 189, 89;
+
+--color-accent-quaternary: #7ddfc4;
+--color-accent-quaternary-rgb: 125, 223, 196;
+
+--color-accent-quinary: #ff5c70;
+--color-accent-quinary-rgb: 255, 92, 112;
+
+/* ------------------------------ Categories ----------------------------- */
+--color-category-combat: var(--color-accent-primary);
+--color-category-combat-rgb: var(--color-accent-primary-rgb);
+
+--color-category-systems: var(--color-accent-secondary);
+--color-category-systems-rgb: var(--color-accent-secondary-rgb);
+
+--color-category-world: var(--color-accent-tertiary);
+--color-category-world-rgb: var(--color-accent-tertiary-rgb);
+
+--color-category-progress: var(--color-accent-quaternary);
+--color-category-progress-rgb: var(--color-accent-quaternary-rgb);
+
+--color-category-gameplay: var(--color-accent-quinary);
+--color-category-gameplay-rgb: var(--color-accent-quinary-rgb);
 
   /* --------------------------- Borders & effects ------------------------- */
   --color-border: rgba(90, 200, 255, 0.24);
@@ -50,30 +64,24 @@
   /* ------------------------------- Gradients ----------------------------- */
   --gradient-page: linear-gradient(180deg, var(--color-background) 0%, var(--color-void) 100%);
   --gradient-hero-overlay:
-    linear-gradient(
-      100deg,
+    linear-gradient(100deg,
       rgba(2, 6, 10, 0.94) 0%,
       rgba(2, 6, 10, 0.78) 34%,
       rgba(2, 6, 10, 0.24) 68%,
-      rgba(2, 6, 10, 0.6) 100%
-    ),
+      rgba(2, 6, 10, 0.6) 100%),
     linear-gradient(to top, var(--color-void) 0%, rgba(2, 6, 10, 0.45) 22%, rgba(2, 6, 10, 0) 62%);
-  --gradient-content-fade: linear-gradient(
-    to bottom,
-    rgba(2, 6, 10, 0.55) 0%,
-    rgba(2, 6, 10, 0.86) 9%,
-    rgba(2, 6, 10, 0.93) 55%,
-    rgba(2, 6, 10, 0.96) 100%
-  );
+  --gradient-content-fade: linear-gradient(to bottom,
+      rgba(2, 6, 10, 0.55) 0%,
+      rgba(2, 6, 10, 0.86) 9%,
+      rgba(2, 6, 10, 0.93) 55%,
+      rgba(2, 6, 10, 0.96) 100%);
   --gradient-card: linear-gradient(158deg, var(--color-surface-glass-strong) 0%, var(--color-surface-glass) 72%);
-  --gradient-timeline: linear-gradient(
-    to bottom,
-    rgba(var(--color-accent-primary-rgb), 0) 0%,
-    var(--color-accent-primary) 6%,
-    var(--color-accent-secondary) 52%,
-    var(--color-accent-primary) 92%,
-    rgba(var(--color-accent-primary-rgb), 0) 100%
-  );
+  --gradient-timeline: linear-gradient(to bottom,
+      rgba(var(--color-accent-primary-rgb), 0) 0%,
+      var(--color-accent-primary) 6%,
+      var(--color-accent-secondary) 52%,
+      var(--color-accent-primary) 92%,
+      rgba(var(--color-accent-primary-rgb), 0) 100%);
 
   /* ------------------------------- Typography ---------------------------- */
   --font-family-heading: "Cormorant Garamond", "Playfair Display", Georgia, "Times New Roman", serif;

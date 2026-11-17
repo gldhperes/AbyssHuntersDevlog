@@ -138,6 +138,11 @@
   --marker-color-rgb: var(--color-category-progress-rgb);
 }
 
+.toneGameplay {
+  --marker-color: var(--color-category-gameplay);
+  --marker-color-rgb: var(--color-category-gameplay-rgb);
+}
+
 /* ------------------------ Connector to the card --------------------------- */
 
 .cardSlot {

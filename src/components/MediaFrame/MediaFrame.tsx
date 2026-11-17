@@ -1,4 +1,4 @@
-// import { Image } from "@/components/ui/image";
+// import { Image } from "../components/ui/image";
 import type { DevlogMedia } from "../../types/DevlogEntry.ts";
 
 // Styles
@@ -23,7 +23,13 @@ export default function MediaFrame({ media }: MediaFrameProps) {
 
   const visual = (
     <span className={styles.visual}>
-      {/* <Image src={media.src} alt={media.alt} className={styles.image} fittingType="fill" /> */}
+
+      <img
+        src={media.src}
+        alt={media.alt}
+        className={styles.image}
+      />
+
       {isVideo ? (
         <span className={styles.videoOverlay}>
           {media.href ? <PlayGlyph /> : null}
