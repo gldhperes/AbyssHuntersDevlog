@@ -49,6 +49,10 @@
   font-weight: var(--font-weight-semibold);
 }
 
+.nav {
+  transition: all .5s ease;
+}
+
 .navList {
   display: flex;
   align-items: center;
@@ -106,6 +110,32 @@
 
 .externalLink:hover {
   color: var(--color-accent-primary);
+}
+
+@media (max-width: 1600px) {
+
+
+  /* .inner {
+
+    display: flex;
+    justify-content: flex-start;
+    gap: 1.5rem;
+  } */
+
+  .nav {
+    /* position: absolute; */
+    /* left: 50rem; */
+    transform: translateX(-130px);
+
+  }
+
+}
+
+
+@media (max-width: 600px) {
+  .brandText {
+    display: none;
+  }
 }
 
 @media (max-width: 480px) {

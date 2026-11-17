@@ -1,52 +1,64 @@
-
 .languageFlags {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-  z-index: 1000;
+    position: fixed;
+    top: 30px;
+    right: 20px;
+    z-index: 1000;
 
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 .flagButton {
-  display: grid;
-  place-items: center;
-  width: 2.4rem;
-  height: 2.4rem;
-  padding: 0;
+    width: 50px;
+    height: 50px;
+    padding: 0;
 
-  border: 1px solid transparent;
-  border-radius: 50%;
-  background: rgba(15, 20, 28, 0.85);
-  cursor: pointer;
+    border: 2px solid transparent;
+    border-radius: 50%;
+    background: rgba(15, 20, 28, 0.85);
+    cursor: pointer;
 
-  font-size: 1.35rem;
-  opacity: 0.6;
+    opacity: 0.6;
 
-  transition: all 180ms ease;
+    transition: all 180ms ease;
 }
 
 .flagButton:hover {
-  opacity: 1;
-  transform: translateY(-2px);
+    opacity: 1;
+    transform: translateY(-2px);
 }
 
 .flagButton.active {
-  opacity: 1;
-  border-color: var(--color-accent-primary);
-  background: rgba(40, 217, 255, 0.12);
+    opacity: 1;
+    border-color: var(--color-accent-primary);
+    background: rgba(40, 217, 255, 0.12);
 }
 
 .flagButton:focus-visible {
-  outline: 2px solid var(--color-accent-primary);
-  outline-offset: 3px;
+    outline: 2px solid var(--color-accent-primary);
+    outline-offset: 3px;
+}
+
+
+@media (max-width: 700px) {
+    .flagButton {
+        width: 35px;
+        height: 35px;
+    }
 }
 
 @media (max-width: 480px) {
-  .languageFlags {
-    top: 12px;
-    right: 12px;
-  }
+    .languageFlags {
+        top: 20px;
+        right: 20px;
+    }
+}
+
+.flagImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    display: block;
 }
