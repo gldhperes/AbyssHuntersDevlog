@@ -4,10 +4,17 @@ import BrandMark from "../components/BrandMark/BrandMark.tsx";
 // Data
 import siteData from "../../data/siteData";
 
+// Language
+import { useLanguage } from "../../contexts/LanguageContext";
+import { translations } from "../../data/translations";
+
 // Styles
 import styles from "./Header.module.css";
 
 export default function Header() {
+    const { language } = useLanguage();
+    const content = translations[language].nav;
+
     return (
         <header className={styles.header}>
             <div className={styles.inner}>
@@ -20,13 +27,18 @@ export default function Header() {
 
                 <nav className={styles.nav} aria-label="Navegação principal">
                     <ul className={styles.navList}>
-                        {siteData.nav.map((item) => (
-                            <li key={item.href}>
-                                <a className={styles.navLink} href={item.href}>
-                                    {item.label}
-                                </a>
-                            </li>
-                        ))}
+                        <li >
+                            <a className={styles.navLink} href="#devlog">
+                                DEVLOG
+                            </a>
+                        </li>
+
+                        <li>
+                            <a className={styles.navLink} href="#about">
+                                {content.about}
+                            </a>
+                        </li>
+
                         {siteData.externalLink ? (
                             <li>
                                 <a

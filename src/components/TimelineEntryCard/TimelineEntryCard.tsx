@@ -7,6 +7,9 @@ import { devlogCategoryLabels } from "../../data/devlogData.ts";
 // Utils
 import { formatDevlogDate } from "../../utils/formatDate.ts";
 
+// Contexts
+import { useLanguage } from "../../contexts/LanguageContext";
+
 // Components
 import MediaFrame from "../../components/MediaFrame/MediaFrame.tsx";
 
@@ -26,6 +29,8 @@ type TimelineEntryCardProps = {
 };
 
 export function TimelineEntryCard({ entry }: TimelineEntryCardProps) {
+  const { language } = useLanguage();
+
   const titleId = `entry-title-${entry.id}`;
 
   return (
@@ -38,7 +43,7 @@ export function TimelineEntryCard({ entry }: TimelineEntryCardProps) {
           {devlogCategoryLabels[entry.category]}
         </p>
         <time className={styles.date} dateTime={entry.date}>
-          {formatDevlogDate(entry.date)}
+          {formatDevlogDate(entry.date, language)}
         </time>
       </header>
 

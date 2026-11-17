@@ -1,32 +1,33 @@
 
-// Data
-import siteData from "../../data/siteData";
+import { useLanguage } from "../../contexts/LanguageContext";
+import { translations } from "../../data/translations";
 
 // Styles
 import styles from "./Hero.module.css";
 
 export default function Hero() {
-  const { eyebrow, title, projectName, description } = siteData.hero;
+  const { language } = useLanguage();
+  const content = translations[language].hero;
 
   return (
     <section className={styles.hero} id="top" aria-labelledby="hero-title">
       <div className={styles.inner}>
         <p className={styles.eyebrow}>
           <span className={styles.eyebrowRule} aria-hidden="true" />
-          {eyebrow}
+          {content.eyebrow}
         </p>
 
         <h1 className={styles.title} id="hero-title">
-          {title}
+          DEVLOG
         </h1>
 
-        <p className={styles.projectName}>{projectName}</p>
+        <p className={styles.projectName}>Abyss Hunters</p>
 
-        <p className={styles.description}>{description}</p>
+        <p className={styles.description}>{content.description}</p>
 
         <div className={styles.actions}>
           <a className={styles.primaryAction} href="#devlog">
-            Ver atualizações
+            {content.action}
             <svg viewBox="0 0 20 20" aria-hidden="true" focusable="false">
               <path
                 d="M10 3v13M4.5 10.5 10 16l5.5-5.5"

@@ -1,4 +1,4 @@
-// WEBP
+// WEBM VIDEOS
 import _2026_03_23 from '../assets/videos/2026-03-23.webm'
 import _2026_03_30 from '../assets/videos/2026-03-30.webm'
 import _2026_04_07 from '../assets/videos/2026-04-07.webm'
@@ -7,25 +7,167 @@ import _2026_05_04 from '../assets/videos/2026-05-04.webm'
 import _2026_06_01 from '../assets/videos/2026-06-01.webm'
 
 
-
 import type { DevlogCategory, DevlogEntry } from "../types/DevlogEntry";
 
 
-
 export const devlogCategoryLabels: Record<DevlogCategory, string> = {
-  combat: "Combate",
-  systems: "Sistemas",
-  world: "Mundo",
-  progress: "Progresso",
+  combat: "Combat",
+  systems: "Systems",
+  world: "World",
+  progress: "Progress",
   gameplay: "Gameplay",
 };
 
-/**
- * Devlog entries, newest first.
- * Add a new object at the top of the array — the timeline handles the
- * alternating layout on its own.
- */
-export const devlogEntries: DevlogEntry[] = [
+export const devlogEntries_PT_BR: DevlogEntry[] = [
+  // 1
+  {
+    id: "multiplayer-foundation",
+    date: "2026-03-23",
+    category: "systems",
+    title: "Fundamentos do Multiplayer",
+    description:
+      "Implementação da infraestrutura inicial do multiplayer, incluindo pareamento de jogadores, conexões de sessão, sincronização de movimentação e animações, detecção de colisões entre jogadores e controles da câmera local.",
+    bulletPoints: [
+      "Configuração inicial do Multiplayer.",
+      "Sistema básico de pareamento para conectar jogadores na mesma sala e sessão.",
+      "Sincronização da movimentação dos jogadores e suas animações.",
+      "Detecção de colisões entre jogadores.",
+      "Movimentação da câmera local."
+    ],
+    media: {
+      type: "video",
+      src: _2026_03_23,
+      alt: "Lâmina curva cortando o ar com faíscas de energia ciano sobre fundo escuro"
+    }
+  },
+
+  // 2
+  {
+    id: "hunt-and-combat-system",
+    date: "2026-03-30",
+    category: "combat",
+    title: "Sistema de Caçadas e Combate",
+    description:
+      "Implementação da interface de seleção de caçadas, sistema de pareamento multiplayer para sessões públicas e privadas e surgimento dos jogadores. Também foram configurados o prefab do Behemoth, suas hitboxes, sistema de vida e tipos de dano por região do corpo, além das primeiras mecânicas de combate utilizando Raycasts executados no servidor.",
+    bulletPoints: [
+      "HUD para seleção de caçadas.",
+      "Interface com informações básicas da caçada.",
+      "Sistema de pareamento para partidas públicas e privadas em salas separadas.",
+      "Surgimento dos jogadores na partida selecionada.",
+      "Configuração do prefab, hitboxes e sistema de vida do Behemoth.",
+      "Configuração dos tipos de dano aplicados às diferentes partes do corpo do Behemoth.",
+      "Mecânicas básicas de combate utilizando Raycasts no servidor."
+    ],
+    media: {
+      type: "video",
+      src: _2026_03_30,
+      alt: "Ruínas colossais com pontes de pedra quebradas sobre um abismo iluminado por cristais ciano",
+    },
+  },
+
+  // 3
+  {
+    id: "gathering-and-behemoth-systems",
+    date: "2026-04-07",
+    category: "gameplay",
+    title: "Sistema de Coleta e Behemoths",
+    description:
+      "Implementação do sistema de coleta com HUD interativo, diferentes tipos de interação e gerenciamento de surgimento dos recursos. Desenvolvimento do sistema de surgimento e reaparecimento dos Behemoths, bancos de dados e configurações de caçadas utilizando ScriptableObjects, inteligência artificial básica com recuperação de vida e HUD de feedback de dano com indicadores animados.",
+    bulletPoints: [
+      "Sistema de Coleta:",
+      "HUD para interação com recursos coletáveis.",
+      "Tipos de interação: apenas clicar ou pressionar um botão para interagir.",
+      "Sistema de surgimento dos recursos coletáveis.",
+      "Sistema de surgimento dos Behemoths, incluindo reaparecimento na localização correta após serem derrotados.",
+      "Bancos de dados para Behemoths e objetos coletáveis.",
+      "ScriptableObjects para configurar o surgimento de Behemoths e recursos em cada caçada.",
+      "IA básica dos Behemoths: retorna ao ponto central de surgimento e recupera a vida ao sair da área de combate.",
+      "HUD básico de feedback de dano, exibindo tipo de dano, valor aplicado e animações."
+    ],
+    media: {
+      type: "video",
+      src: _2026_04_07,
+      alt: ""
+    },
+  },
+
+  // 4
+  {
+    id: "combat-feedback-and-weapon-system",
+    date: "2026-04-19",
+    category: "combat",
+    title: "Feedback de Combate e Sistema de Armas",
+    description:
+      "Melhorias no feedback de combate, com animações aprimoradas para os indicadores de dano e novos indicadores de dano de atordoamento. Implementação do sistema básico de configuração da arma equipada, incluindo tipos de dano e multiplicadores para ataques leves e pesados.",
+    bulletPoints: [
+      "Melhoria nas animações dos indicadores de dano.",
+      "Adição de indicadores de dano de atordoamento quando esse tipo de dano é aplicado.",
+      "Configuração básica do tipo de arma equipada pelo jogador.",
+      "Configuração dos tipos de dano das armas.",
+      "Multiplicadores de dano para ataques leves e pesados."
+    ],
+    media: {
+      type: "video",
+      src: _2026_04_19,
+      alt: ""
+    },
+  },
+
+  // 5
+  {
+    id: "player-support-and-consumables",
+    date: "2026-05-04",
+    category: "gameplay",
+    title: "Suporte ao Jogador e Consumíveis",
+    description:
+      "Implementação de mecânicas de suporte e sobrevivência, permitindo que os jogadores revivam seus companheiros, interajam com fontes de cura e utilizem consumíveis. Adição de seringas para reviver jogadores abatidos e diferentes poções que concedem melhorias temporárias de atributos.",
+    bulletPoints: [
+      "Sistema de reviver jogadores: permite que os jogadores reanimem seus companheiros.",
+      "Fontes de cura.",
+      "Sistema de consumíveis.",
+      "Utilização de seringas para reviver companheiros abatidos.",
+      "Utilização de diferentes tipos de poções para receber bônus temporários."
+    ],
+    media: {
+      type: "video",
+      src: _2026_05_04,
+      alt: ""
+    },
+  },
+
+  // 6
+  {
+    id: "core-gameplay-systems-integration",
+    date: "2026-06-01",
+    category: "gameplay",
+    title: "Integração dos Sistemas Principais do Jogo",
+    description:
+      "Grande atualização de gameplay e arquitetura, introduzindo os sistemas completos de consumíveis, inventário, recompensas e drops. Integração do primeiro ciclo completo de gameplay, conectando os confrontos contra Behemoths à obtenção de itens e ao gerenciamento do inventário. Refatoração da arquitetura MVVM, melhorias na estabilidade do multiplayer e reformulação da validação de combate, com aplicação de dano autoritativa no servidor e compensação de latência.",
+    bulletPoints: [
+      "Sistema de Consumíveis: seringas para reviver jogadores, bônus temporários, HUD e sincronização multiplayer.",
+      "Sistema de Inventário: banco de dados de itens, dados do inventário dos jogadores e serviços de gerenciamento.",
+      "Sistema de Recompensas: processamento de recompensas e integração com o inventário dos jogadores.",
+      "Sistema de Drops: tabelas de drops, chances de obtenção e distribuição automática de recompensas.",
+      "Ciclo Completo de Gameplay: derrota do Behemoth → obtenção de itens → inventário.",
+      "Refatoração da Arquitetura MVVM: contexto do jogador, Player Root, padrão Observable e inicialização centralizada da interface.",
+      "Melhorias no Multiplayer: sincronização de objetos, remoção de jogadores das sessões e gerenciamento de conexões.",
+      "Refatoração da Arquitetura de Combate: validação de ataques no servidor, compensação de latência e aplicação autoritativa de dano.",
+      "Combate Autoritativo no Servidor: separação da lógica de gameplay dos efeitos visuais.",
+      "Expansão dos Sistemas do Jogador: melhorias na arquitetura e inicialização para facilitar a implementação de futuros sistemas relacionados ao jogador."
+    ],
+    media: {
+      type: "video",
+      src: _2026_06_01,
+      alt: ""
+    },
+  },
+];
+
+
+
+
+
+export const devlogEntries_EN_US: DevlogEntry[] = [
   // 1
   {
     id: "multiplayer-foundation",
@@ -141,7 +283,7 @@ export const devlogEntries: DevlogEntry[] = [
     },
   },
 
-  // 6 
+  // 6
   {
     id: "core-gameplay-systems-integration",
     date: "2026-06-01",

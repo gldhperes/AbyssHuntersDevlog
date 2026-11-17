@@ -5,7 +5,7 @@ import Hero from "../components/Hero/Hero.tsx";
 import About from "../components/About/About.tsx";
 import Timeline from "../components/Timeline/Timeline.tsx";
 import Footer from "../components/Footer/Footer.tsx";
-import { devlogEntries } from "../data/devlogData";
+// import { devlogEntries } from "../data/devlogData";
 
 import styles from "./Devlog.module.css";
 
@@ -17,7 +17,8 @@ export default function Devlog() {
       <main className={styles.main}>
         <Hero />
         <About />
-        <Timeline entries={devlogEntries} />
+        {/* <Timeline entries={devlogEntries} /> */}
+        <Timeline />
       </main>
       <Footer />
     </div>

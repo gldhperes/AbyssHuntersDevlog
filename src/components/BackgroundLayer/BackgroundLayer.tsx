@@ -1,14 +1,17 @@
 import type { CSSProperties } from "react";
-import siteData from "../../data/siteData.ts";
+import ConceptArt from "../../assets/AbyssHuntersConceptArt.png";
+
 import styles from "./BackgroundLayer.module.css";
+
+
 
 /**
  * Fixed visual layer: the hero art stays put while the page scrolls over it.
  * Purely decorative and pointer-events: none, so it never intercepts clicks.
  */
 export default function BackgroundLayer() {
-  const imageStyle: CSSProperties = siteData.heroImage
-    ? ({ "--hero-background-image": `url(${JSON.stringify(siteData.heroImage)})` } as CSSProperties)
+  const imageStyle: CSSProperties = ConceptArt
+    ? ({ "--hero-background-image": `url(${JSON.stringify(ConceptArt)})` } as CSSProperties)
     : {};
 
   return (
